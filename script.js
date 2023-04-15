@@ -29,4 +29,4 @@ for (let i = 0; i < 2; i++) {
 }
 
 appData.moneyPerDay = (appData.budget / 30).toFixed();
-alert("Бюджет на 1 день: " + appData.moneyPerDay);
+alert("Ежедневный бюджет: " + appData.moneyPerDay);
