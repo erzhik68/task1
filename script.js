@@ -1,3 +1,45 @@
+"use strict";
+
+// Получить кнопку "Начать расчет" через id
+// let startButton = document.querySelector("#start");
+let startBtn = document.getElementById("start");
+
+// Получить все блоки в правой части программы через классы
+// (которые имеют класс название-value, начиная с и заканчивая)
+let budgetValue = document.getElementsByClassName("budget-value")[0];
+let daybudgetValue = document.getElementsByClassName("daybudget-value")[0];
+let levelValue = document.getElementsByClassName("level-value")[0];
+let expensesValue = document.getElementsByClassName("expenses-value")[0];
+let optionalExpensesValue = document.getElementsByClassName(
+  "optionalexpenses-value"
+)[0];
+let incomeValue = document.getElementsByClassName("income-value")[0];
+let monthsavingsValue =
+  document.getElementsByClassName("monthsavings-value")[0];
+let yearsavingsValue = document.getElementsByClassName("yearsavings-value")[0];
+
+// Получить поля(input) c обязательными расходами через класс. (class=”expenses-item”)
+let expensesItem = document.getElementsByClassName("expenses-item");
+
+// Получить кнопки “Утвердить” и “Рассчитать” через Tag, каждую в своей переменной.
+let expensesItemBtn = document.getElementsByTagName("button")[0];
+let optionalExpensesBtn = document.getElementsByTagName("button")[1];
+let countBudgetBtn = document.getElementsByTagName("button")[2];
+
+// Получить поля для ввода необязательных расходов
+// (optionalexpenses-item) при помощи querySelectorAll
+let optionalExpensesItem = document.querySelectorAll(".optionalexpenses-item");
+
+// Получить оставшиеся поля через querySelector
+// (статьи возможного дохода, чекбокс, сумма, процент, год, месяц, день)
+let chooseIncome = document.querySelector(".choose-income");
+let checkSavings = document.querySelector("#savings");
+let chooseSum = document.querySelector(".choose-sum");
+let choosePercent = document.querySelector(".choose-percent");
+let yearValue = document.querySelector(".year-value");
+let monthValue = document.querySelector(".month-value");
+let dayValue = document.querySelector(".day-value");
+
 let money, time;
 
 function start() {
@@ -89,11 +131,15 @@ const appData = {
   },
 };
 
-function allData() {
-  console.log("Наша программа включает в себя данные: ");
-  let index = 0;
-  for (let key in appData) {
-    index++;
-    console.log(index + ". " + key + ": " + appData[key]);
-  }
+let index = 0;
+for (let key in appData) {
+  index++;
+  console.log(
+    "Наша программа включает в себя данные: " +
+      index +
+      ". " +
+      key +
+      ": " +
+      appData[key]
+  );
 }
